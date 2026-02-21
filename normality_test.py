@@ -12,15 +12,6 @@ df['Close'] = pd.to_numeric(df['Close'], errors='coerce')
 df['Close'] = df['Close'].ffill()
 
 df['relative_close_change'] = df['Close'].pct_change()*100
-#we got percentage relative change in close price
-
-#y-axis=frequency of relative change in close price
-
-plt.figure(figsize=(14,10))
-df['relative_close_change'].plot(kind='kde', title='Relative Change in Close Price Distribution')
-plt.xlabel('Relative Change in Close Price (%)')
-plt.ylabel('Density')
-plt.show()
 
 st,p=stats.shapiro(df['relative_close_change'].dropna())
 print('Shapiro-Wilk Test Statistic:', st)
@@ -59,5 +50,5 @@ print("Kurtosis:", stats.kurtosis(df['relative_close_change'].dropna()))
 Skewness: 0.6160282875216987
 Kurtosis: 15.377373210158499
 '''
-
-#Hence , it is mildly right skewed and has very high kurtosis (leptokurtic)
+ 
+#Hence , it is  right skewed and has very high kurtosis (leptokurtic)
