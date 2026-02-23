@@ -52,3 +52,12 @@ Kurtosis: 15.377373210158499
 '''
  
 #Hence , it is  right skewed and has very high kurtosis (leptokurtic)
+import numpy as np
+data=df['relative_close_change'].dropna()
+mu=np.mean(data)
+sigma=np.std(data)
+x=np.linspace(min(data), max(data), 100)
+plt.hist(data, bins=50, density=True, alpha=0.6, color='g')
+plt.plot(x, stats.norm.pdf(x, mu, sigma), 'r-', lw=2)
+plt.title("Normal distribution fit")
+plt.show()
