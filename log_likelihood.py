@@ -53,3 +53,15 @@ elif delta_aic > -2:
     print("No meaningful difference between models.")
 else:
     print("Normal distribution fits better (unexpected for financial returns).")
+
+'''
+Output:
+Log-Likelihood Normal: -7613.2809042028675
+Log-Likelihood t: -6906.737030923796
+AIC Normal: 15230.561808405735
+AIC t: 13819.474061847592
+Delta AIC: 1411.0877465581434
+t-distribution is a better fit to the data.
+Delta AIC (Normal - t): 1411.0877465581434
+Strong evidence: t-distribution fits significantly better than normal.
+'''
